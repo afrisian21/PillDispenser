@@ -248,7 +248,7 @@ imshow("Camera Preview", LastFrame);
 if ((waitKey(16)==32)||bt_pr==true)
 {
 sleep(3);
-imwrite("/home/pi/Desktop/PictureTaken.jpg",LastFrame);
+imwrite("PictureTaken.jpg",LastFrame);
 //cout<<"Picture was taken"<<endl;
 break;
 }
@@ -272,7 +272,7 @@ int main(int argc,char* argv[]) {
 
    // tesseract code to extract text from image. 
    ocr->Init(NULL, "eng");
-   Pix *image = pixRead("/home/pi/Desktop/PictureTaken.jpg");
+   Pix *image = pixRead("PictureTaken.jpg");
    ocr->SetImage(image);
    char* outText;
 
@@ -280,7 +280,7 @@ int main(int argc,char* argv[]) {
    printf("OCR output:\n%s", outText);
 
    printf("Saving Converted Text\n");
-   ofstream tofile("/home/pi/Desktop/tess_conv_txt.txt");
+   ofstream tofile("tess_conv_txt.txt");
    tofile << outText<<endl;
    tofile.close();
    
@@ -289,7 +289,7 @@ int main(int argc,char* argv[]) {
    pixDestroy(&image);
    
    printf("Processing the Image to extract the prescription\n");
-   Prescription_Read(true,"/home/pi/Desktop/tess_conv_txt.txt");
+   Prescription_Read(true,"tess_conv_txt.txt");
    return 0;
 }
 
