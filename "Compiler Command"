@@ -1,1 +1,9 @@
-g++ mainProject\ \(1\).cpp -o mainproject -llept -ltesseract $(pkg-config --cflags --libs opencv) `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0`
+Compiling Commands:
+
+Main Project: g++ mainProject\ \(1\).cpp -o mainproject -llept -ltesseract $(pkg-config --cflags --libs opencv) `pkg-config --cflags gtk+-2.0` `pkg-config --libs gtk+-2.0`
+
+
+ 
+
+Actual code:   g++ actualcode.cpp -o actualcode $(pkg-config --cflags --libs opencv)
+
